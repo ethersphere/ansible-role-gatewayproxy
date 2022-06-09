@@ -1,0 +1,8 @@
+---
+- name: Add Gateway Proxy repository.
+  ansible.builtin.yum_repository:
+    name: ethersphere
+    description: Ethersphere Repo
+    baseurl: "{{ gatewayproxy_yum_repo_url }}"
+    gpgcheck: true
+    gpgkey: "{{ gatewayproxy_yum_gpg_key }}"

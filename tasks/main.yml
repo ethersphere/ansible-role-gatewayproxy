@@ -1,0 +1,38 @@
+---
+- include_tasks: setup-Redhat.yml
+  when: ansible_os_family == 'RedHat'
+
+- include_tasks: setup-Debian.yml
+  when: ansible_os_family == 'Debian'
+
+- name: Install Gateway Proxy (Ansible <2.12).
+  ansible.builtin.package:
+    name: "{{ gatewayproxy_package }}"
+    state: "{{ gatewayproxy_package_state }}"
+  notify: restart gateway-proxy
+  ignore_errors: "{{ ansible_check_mode }}"
+  when: "ansible_version.full is version_compare('2.12', '<')"
+
+- name: Install Gateway Proxy (Ansible >=2.12).
+  ansible.builtin.package:
+    name: "{{ gatewayproxy_package }}"
+    state: "{{ gatewayproxy_package_state }}"
+    allow_downgrade: true
+  notify: restart gateway-proxy
+  ignore_errors: "{{ ansible_check_mode }}"
+  when: "ansible_version.full is version_compare('2.12', '>=')"
+
+- name: Set defaults for Gateway Proxy daemon.
+  ansible.builtin.template:
+    src: templates/default.j2
+    dest: /etc/default/gateway-proxy
+    mode: '0644'
+  when: gatewayproxy_config.keys() | length > 0
+  notify: restart gateway-proxy
+
+- name: Ensure Gateway Proxy is started and enabled at boot.
+  ansible.builtin.service:
+    name: gateway-proxy
+    state: "{{ gatewayproxy_service_state }}"
+    enabled: "{{ gatewayproxy_service_enabled }}"
+  ignore_errors: "{{ ansible_check_mode }}"

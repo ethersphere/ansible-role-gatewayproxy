@@ -1,0 +1,36 @@
+---
+galaxy_info:
+  role_name: gatewayproxy
+  namespace: ethersphere
+  author: devops
+  description: Ansible role for installing gateway-proxy, a proxy service for the Bee client
+
+  license: BSD-3-Clause
+
+  min_ansible_version: "2.2"
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - all
+    # - name: Amazon
+    #   versions:
+    #     - all
+    # - name: EL
+    #   versions:
+    #     - all
+    # - name: Fedora
+    #   versions:
+    #     - all
+
+  galaxy_tags:
+    - gatewayproxy
+    - swarm
+    - blockchain
+    - decentralisation
+    - storage
+
+dependencies: []

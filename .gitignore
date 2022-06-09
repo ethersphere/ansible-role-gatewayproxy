@@ -1,0 +1,5 @@
+hosts
+ansible.cfg
+playbook.yml
+.python-version
+host_vars

@@ -1,0 +1,4 @@
+# Configuration for gateway-proxy daemon
+{% for key in gatewayproxy_config.keys() %}
+{{ key | upper | regex_replace('-', '_') }}={{ gatewayproxy_config[key] }}
+{% endfor %}

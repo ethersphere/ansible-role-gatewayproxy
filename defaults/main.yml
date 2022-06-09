@@ -1,0 +1,13 @@
+---
+# Package options
+gatewayproxy_package_state: present
+
+# Service options.
+gatewayproxy_service_state: started
+gatewayproxy_service_enabled: true
+
+# Gateway proxy repo key
+gatewayproxy_repo_key_id: 9A863065472A8ACFD2F68ADB9625CC6265230910
+
+# Used only for Debian/Ubuntu. Switch 'stable' to 'nightly' if needed.
+gatewayproxy_apt_release_channel: stable

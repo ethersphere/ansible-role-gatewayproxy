@@ -1,0 +1,16 @@
+---
+name: "gatewayproxy"
+namespace: "ethersphere"
+version: "0.1.0"
+readme: "README.md"
+authors:
+  - "devops (https://www.ethswarm.org/)"
+description: Manage gateway-proxy
+license_file: "LICENSE"
+tags:
+  - gatewayproxy
+  - swarm
+  - blockchain
+  - decentralisation
+  - storage
+repository: "https://github.com/ethersphere/ansible-role-gateway-proxy"

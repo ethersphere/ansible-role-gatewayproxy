@@ -1,0 +1,4 @@
+---
+- name: restart gateway-proxy
+  ansible.builtin.service: "name=gateway-proxy state={{ gatewayproxy_restart_handler_state }}"
+  ignore_errors: "{{ ansible_check_mode }}"
