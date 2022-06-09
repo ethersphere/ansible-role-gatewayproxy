@@ -8,10 +8,10 @@ This repository contains sample code for automating bee installation and managem
 ## Installation
 
 ### Ansible Galaxy
-Use `ansible-galaxy install ethersphere.gateway-proxy` to install the latest stable release of the role on your system. Alternatively, if you have already installed the role, use `ansible-galaxy install -f ethersphere.gateway-proxy` to update the role to the latest release.
+Use `ansible-galaxy install ethersphere.gatewayproxy` to install the latest stable release of the role on your system. Alternatively, if you have already installed the role, use `ansible-galaxy install -f ethersphere.gatewayproxy` to update the role to the latest release.
 
 ### Git
-Use git clone https://github.com/ethersphere/ansible-role-gateway-proxy.git to pull the latest edge commit of the role from GitHub.
+Use git clone https://github.com/ethersphere/ansible-role-gatewayproxy.git to pull the latest edge commit of the role from GitHub.
 
 ## Example
 
